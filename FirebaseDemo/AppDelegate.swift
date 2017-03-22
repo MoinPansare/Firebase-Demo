@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,14 +21,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         FBSDKApplicationDelegate.sharedInstance().application(application, didFinishLaunchingWithOptions: launchOptions);
         
+        // Initialize Google sign-in
         FIRApp.configure()
+        GIDSignIn.sharedInstance().clientID = FIRApp.defaultApp()?.options.clientID
+        
+        
         
         return true
     }
+    
+    
 
     func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
         
-        return FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        let handle =  FBSDKApplicationDelegate.sharedInstance().application(application, open: url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        GIDSignIn.sharedInstance().handle(url, sourceApplication: sourceApplication, annotation: annotation)
+        
+        return handle;
         
     }
     
@@ -52,7 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
 
 }
 

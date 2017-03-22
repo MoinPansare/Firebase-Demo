@@ -28,6 +28,11 @@ PODS:
   - FirebaseCore (3.5.0):
     - GoogleToolboxForMac/NSData+zlib (~> 2.1)
   - FirebaseInstanceID (1.0.9)
+  - GoogleSignIn (4.0.2):
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GoogleToolboxForMac/NSString+URLArguments (~> 2.1)
+    - GTMOAuth2 (~> 1.0)
+    - GTMSessionFetcher/Core (~> 1.1)
   - GoogleToolboxForMac/DebugUtils (2.1.1):
     - GoogleToolboxForMac/Defines (= 2.1.1)
   - GoogleToolboxForMac/Defines (2.1.1)
@@ -38,7 +43,13 @@ PODS:
     - GoogleToolboxForMac/Defines (= 2.1.1)
     - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
   - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMOAuth2 (1.1.4):
+    - GTMSessionFetcher (~> 1.1)
+  - GTMSessionFetcher (1.1.8):
+    - GTMSessionFetcher/Full (= 1.1.8)
   - GTMSessionFetcher/Core (1.1.8)
+  - GTMSessionFetcher/Full (1.1.8):
+    - GTMSessionFetcher/Core (= 1.1.8)
 
 DEPENDENCIES:
   - FBSDKCoreKit
@@ -46,6 +57,7 @@ DEPENDENCIES:
   - FBSDKShareKit
   - Firebase/Auth
   - Firebase/Core
+  - GoogleSignIn
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
@@ -57,9 +69,11 @@ SPEC CHECKSUMS:
   FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
   FirebaseCore: 1c0a13bf59bb95cdd19577252499f0ec6a03e999
   FirebaseInstanceID: 2d0518b1378fe9d685ef40cbdd63d2fdc1125339
+  GoogleSignIn: d7ad83f13480e1f30453471d00d19b5293ac46af
   GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMOAuth2: 7fc9c10f5c745f4d9850419ea88889fe3baa6b7d
   GTMSessionFetcher: 6f8d8b28b7e345549ac471071608170b31cb4977
 
-PODFILE CHECKSUM: f50f816e08d2419aa17a8042210d75f6500c908e
+PODFILE CHECKSUM: 6ee0b6b1e2cc390dc4367eb11b4bfad0b4e3c54d
 
 COCOAPODS: 1.1.1
